@@ -1,0 +1,11 @@
+<h1>Usuarios</h1>
+
+<app-table
+  *ngIf="data && data.length"
+  [info]="data"
+></app-table>
+
+<app-create-button
+label="Usuario"
+createLink="/usuarios/criacao"
+></app-create-button>

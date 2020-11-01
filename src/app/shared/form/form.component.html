@@ -1,0 +1,16 @@
+<form (submit)="onSubmit($event)">
+  <div class="input" *ngFor="let field of fields">
+    <label>{{ field.label }}</label>
+    <input *ngIf="field.type !== 'date' && field.type !== 'select'" [type]="field.type" [value]="field.value || ''" (keyup)="fieldFill($event, field.name)" [disabled]="!field.type" required/>
+    <input *ngIf="field.type === 'date' && field.type !== 'select'" type="date" [value]="field.value || ''" (keyup)="fieldFill($event, field.name)" (change)="fieldFill($event, field.name)" required/>
+    <select *ngIf="field.type === 'select'" (change)="fieldFill($event, field.name)">
+      <option value="" disabled></option>
+      <option *ngFor="let option of field.options" [value]="option._id">{{ option.name }}</option>
+    </select>
+  </div>
+  <button type="submit">Enviar</button>
+</form>
+
+<div class="loading" *ngIf="loading">
+  <p>Enviando informações...</p>
+</div>

@@ -1,0 +1,13 @@
+<h1>Viagens</h1>
+
+<app-table
+  *ngIf="data && data.length"
+  [info]="data"
+  editLink="criacao"
+  deleteLink="trip"
+></app-table>
+
+<app-create-button
+label="Viagem"
+createLink="/viagens/criacao"
+></app-create-button>

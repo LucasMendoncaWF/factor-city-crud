@@ -1,0 +1,68 @@
+form {
+  width: 40vw;
+  margin-top: 50px;
+}
+
+input, select {
+  width: 100%;
+  padding: 20px 20px 20px 0px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid gray;
+  margin-bottom: 60px;
+  font-size: 18px;
+
+  &:disabled {
+    opacity: 0.6;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid black;
+  }
+}
+
+label {
+  font-size: 18px;
+}
+
+button {
+  margin-top: 40px;
+  padding: 15px 50px;
+  border-radius: 30px;
+  border: 1px solid gray;
+  color: gray;
+  cursor: pointer;
+  float: right;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.loading {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.8);
+
+  p {
+    color: white;
+    text-align: center;
+    padding-top: 45vh;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  form {
+    width: 100%;
+  }
+}

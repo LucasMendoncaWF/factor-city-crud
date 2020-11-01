@@ -1,0 +1,16 @@
+<ng-container>
+  <div class="list">
+    <table>
+      <tr>
+        <th *ngFor="let column of columns">{{ column }}</th>
+        <th *ngIf="editLink"></th>
+        <th *ngIf="deleteLink" class="last"></th>
+      </tr>
+      <tr *ngFor="let data of info">
+        <td *ngFor="let column of columns">{{ data[column] }}</td>
+        <td *ngIf="editLink" [routerLink]="editLink + '/' + data._id" class="edit"><div>Editar</div></td>
+        <td *ngIf="deleteLink" (click)="delete(data)" class="delete last"><div>Excluir</div></td>
+      </tr>
+    </table>
+  </div>
+</ng-container>
